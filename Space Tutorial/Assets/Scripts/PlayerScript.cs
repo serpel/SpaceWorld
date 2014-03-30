@@ -30,8 +30,23 @@ public class PlayerScript : MonoBehaviour {
 		}
 	}
 
-	void FixedUpdate()
-	{
+	void FixedUpdate(){
 		rigidbody2D.velocity = movement;
+	}
+
+	void OnCollisionEnter2D(Collision2D collision){
+		bool damagePlayer = false;
+		EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript> ();
+
+		if (enemy != null) {
+			HealthScript enemyHealth = enemy.GetComponent<HealthScript>();
+			if(enemyHealth != null) enemyHealth.Damage(enemyHealth.hp);
+			damagePlayer = true;
+		}
+
+		if (damagePlayer) {
+			HealthScript playerHealth = GetComponent<HealthScript>();
+			if(playerHealth != null) playerHealth.Damage(1);
+		}
 	}
 }

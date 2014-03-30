@@ -2,12 +2,14 @@
 using System.Collections;
 
 public class WeaponScript : MonoBehaviour {
-
-
+	
 	public Transform shotPrefab;
 
-	public float shootingRate = 0.25f;
+	private Transform[] shotArray;
+	private int i = 0;
+	public int poolSize = 20;
 
+	public float shootingRate = 0.25f;
 	private float shootCoolDown;
 
 	public bool CanAttack
@@ -18,6 +20,7 @@ public class WeaponScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		shootCoolDown = 0f;
+		shotArray = new Transform[poolSize];
 	}
 	
 	// Update is called once per frame
@@ -31,19 +34,26 @@ public class WeaponScript : MonoBehaviour {
 		if (CanAttack) {
 
 			shootCoolDown = shootingRate;
-			var shootTransform = Instantiate(shotPrefab) as Transform;
-			shootTransform.position = transform.position;
-			ShotScript shot = shootTransform.gameObject.GetComponent<ShotScript>();
+
+			if(shotArray[i] != null){
+				Destroy(shotArray[i].gameObject);
+			}
+
+			shotArray[i] = Instantiate(shotPrefab) as Transform;
+			shotArray[i].position = transform.position;
+			ShotScript shot = shotArray[i].gameObject.GetComponent<ShotScript>();
 
 			if(shot != null){
 				shot.isEnemyShot = isEnemy;
 			}
 
-			MoveScript move = shootTransform.gameObject.GetComponent<MoveScript>();
+			MoveScript move = shotArray[i].gameObject.GetComponent<MoveScript>();
 
 			if(move != null){
 				move.direction = transform.right;
 			}
+			i++;
+			if (i >= poolSize) i = 0;
 		}
 	}
 }

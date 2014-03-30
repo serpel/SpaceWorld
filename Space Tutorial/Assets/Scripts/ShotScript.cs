@@ -11,4 +11,16 @@ public class ShotScript : MonoBehaviour {
 	void Start () {
 		Destroy (gameObject, 20);
 	}
+
+	//void OnTriggerEnter2D(Collider2D otherCollider)
+	void OnTriggerEnter2D(Collider2D otherCollider){
+
+		HealthScript health = otherCollider.gameObject.GetComponent<HealthScript> ();
+
+		if (health != null) {
+			if(health.isEnemy != isEnemyShot){
+				Destroy (gameObject);
+			}
+		}
+	}
 }
