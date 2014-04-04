@@ -1,18 +1,21 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ScrollingScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\HealthScript.cs" Line="23" Column="19" />
-      <File FileName="Assets\Scripts\ShotScript.cs" Line="20" Column="15" />
-      <File FileName="Assets\Scripts\WeaponScript.cs" Line="49" Column="4" />
-      <File FileName="Assets\Scripts\PlayerScript.cs" Line="41" Column="16" />
-      <File FileName="Assets\Scripts\EnemyScript.cs" Line="15" Column="7" />
-      <File FileName="Assets\Scripts\MoveScript.cs" Line="24" Column="3" />
-      <File FileName="Assets\Scripts\ScrollingScript.cs" Line="26" Column="3" />
+      <File FileName="Assets\Scripts\HealthScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ShotScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\WeaponScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerScript.cs" Line="46" Column="26" />
+      <File FileName="Assets\Scripts\EnemyScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MoveScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ScrollingScript.cs" Line="65" Column="37" />
+      <File FileName="Assets\Scripts\RendererExtensions.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\serpel\Documents\GitHub\SpaceWorld\Space Tutorial\Assets\Scripts\ScrollingScript.cs" line="56" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
